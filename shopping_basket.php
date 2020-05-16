@@ -33,7 +33,7 @@
 		if (array_search($product,array_column($logins,'product')) && array_search($price,array_column($logins,'price')) && array_search($quantity,array_column($logins,'quantity'))){
 			/* Success: Set session variables and redirect to Protected page  */
 			$_SESSION['EmailData']['product']=$product;
-			header("location:index1.php");
+			header("location:shopping_basket.php");
 			exit;
 		} else {
 	          	echo "Unsuccessful attempt: Set error message"; 
@@ -53,19 +53,19 @@
 
   <?php  echo (isset($msg))?$msg:'';?>
     <label for="product">Product : </label>
-      <input name="product" type="product">
+      <input name="product" type="product" value="<?php echo $_SESSION['EmailData']['product']?>" required> 
       <br>
       <br>
-    <label for="price">Price : </label>
-    <input name="price" type="price">
-     <br>
-      <br>
-    <label for="quantity">Quantity : </label>
-    <input name="quantity" type="quantity">
-     <br>
+     
      <br>
         <input name="Submit" type="submit" value="adding">
+
+
+        <?php echo ' Welcome your product :'.$_SESSION['EmailData']['product'];?>
+
   
 </form>
 </body>
 </html>
+you can delete your product. <a href="delete_session.php">Click here</a> 
+

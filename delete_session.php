@@ -1,9 +1,9 @@
-<?php
 
+<?php
 session_start();
 
 if(!isset($_SESSION['EmailData']['email'])){
-	header("location:shopping_basket.php");
+	header("location:index1.php");
 	exit;
  
 
@@ -20,8 +20,6 @@ if(isset($_POST['delete'])){
              $_POST['product'] = $_SESSION['EmailData']['product'];
 
     }
-
-
 }
  ?>
  <br> 
@@ -32,6 +30,9 @@ if(isset($_POST['delete'])){
     <input name="product" type="product" value="<?php echo $_SESSION['EmailData']['product'] ?>" required>
     <br>
     <br>
-    <input name="delete" type="submit" value="update">
+    <input name="delete" type="submit" value="delete">
 </form>
- if you like <a href="logout.php">Logout </a> to fished session
+
+you can complete shopping. <a href="index1.php">Click here</a> 
+
+ if you like <a href="logout.php">Logout </a> to fished session .

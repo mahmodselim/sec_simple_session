@@ -1,6 +1,6 @@
 <?php session_start(); /* Starts the session */
 
-if(!isset($_SESSION['EmailData']['email'])){
+if(!isset($_SESSION['EmailData']['product'])){
 	header("location:login.php");
 	exit;
     
@@ -41,14 +41,13 @@ if(isset($_POST['Add'])){
         
         <tr>
             <td><?php echo ++$index; ?></td>
-            <td><?php echo $row['product']; ?></td>
+            <td><?php echo $row['product']; ?><a href="shopping_basket.php">Click here</a></td>
             <td><?php echo $row['price']; ?></td>
             <td><?php echo $row['quantity']; ?></td>
           </tr>
     <?php endforeach;?>
    
- 
-    </tbody>
+     </tbody>
 </table>
 </body>
 </html>
@@ -62,7 +61,6 @@ if(isset($_POST['Add'])){
  </br>
 </br>
 </br>
- you can delete your product in . <a href="delete_session.php">Click here</a> if you lik .
 
 
 
